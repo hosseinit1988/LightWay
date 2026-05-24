@@ -1,16 +1,73 @@
-# LightWay
+// SPDX-License-Identifier: AGPL-3.0-only
+// LightWay - Google Apps Script (Front Door)
 
-**LightWay** is a lightweight, censorship-circumvention relay that routes traffic through Google Apps Script and Cloudflare Worker — no dedicated server required.
+const AUTH_KEY = "your-strong-password-here";
+const WORKER_URL = "https://your-worker.workers.dev";
 
-[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
-[![Made with JavaScript](https://img.shields.io/badge/Made%20with-JavaScript-yellow.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+function doPost(e) {
+  if (!e.parameter || e.parameter.auth !== AUTH_KEY) {
+    return returnJson({ error: 'unauthorized' }, 403);
+  }
 
-## 🌟 Features
+  try {
+    const requestData = JSON.parse(e.postData.contents);
+    
+    if (!requestData.url) {
+      return returnJson({ error: 'bad_request' }, 400);
+    }
 
-- **Free to use** - Leverages Google Apps Script and Cloudflare Worker free tiers
-- **Easy to deploy** - Simple copy-paste setup, no complex configuration
-- **Transparent** - Clean, well-documented code you can audit
-- **Secure** - Auth key protection and HTTPS-only communication
-- **Lightweight** - Minimal code, maximum efficiency
+    const workerResponse = UrlFetchApp.fetch(WORKER_URL, {
+      method: 'post',
+      contentType: 'application/json',
+      payload: JSON.stringify({
+        url: requestData.url,
+        method: requestData.method || 'GET',
+        headers: requestData.headers || {},
+        body: requestData.body || null
+      }),
+      muteHttpExceptions: true
+    });
 
-## 📋 How It Works
+    const responseCode = workerResponse.getResponseCode();
+    const responseText = workerResponse.getContentText();
+    
+    if (responseCode !== 200) {
+      return returnJson({ error: 'worker_error' }, 502);
+    }
+
+    const workerResult = JSON.parse(responseText);
+    
+    if (workerResult.error) {
+      return returnJson(workerResult, 502);
+    }
+
+    let body = workerResult.body;
+    if (workerResult.headers && workerResult.headers['content-type']) {
+      const contentType = workerResult.headers['content-type'].toLowerCase();
+      if (contentType.includes('text/') || contentType.includes('json')) {
+        body = String.fromCharCode.apply(null, body);
+      }
+    }
+
+    return returnJson({
+      status: workerResult.status,
+      statusText: workerResult.statusText,
+      headers: workerResult.headers,
+      body: body
+    }, 200);
+
+  } catch (error) {
+    return returnJson({ error: error.toString() }, 500);
+  }
+}
+
+function doGet() {
+  return ContentService.createTextOutput('LightWay Relay is running. Use POST method.');
+}
+
+function returnJson(data, statusCode) {
+  return ContentService
+    .createTextOutput(JSON.stringify(data))
+    .setMimeType(ContentService.MimeType.JSON)
+    .setStatusCode(statusCode);
+}
