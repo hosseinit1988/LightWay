@@ -1,6 +1,6 @@
 <div dir="rtl" align="center">
 
-# 🌟 LightWay 
+# 🌟 LightWay 🌟
 ## ⚡ رله عبور از فیلترینگ DPI
 
 [![License](https://img.shields.io/badge/مجوز-AGPLv3-blue.svg)](LICENSE)
@@ -60,7 +60,12 @@
 
 - ✅ یک **حساب گوگل** (رایگان)
 - ✅ یک **حساب کلادفلر** (سطح رایگان کافی است)
-- ✅ اپ **Zyrln** که از گیتهاب اصلی آن دانلود کنید
+- ✅ اپ **Zyrln** که از لینک‌های زیر دانلود کنید:
+
+| پلتفرم | لینک دانلود |
+|---------|--------------|
+| 🪟 **ویندوز** | [📥 دانلود نسخه ویندوز](https://github.com/ajavadinezhad/zyrln/releases/download/v1.6.0/zyrln-1.6-windows-amd64.exe) |
+| 🤖 **اندروید** | [📥 دانلود نسخه اندروید (APK)](https://github.com/ajavadinezhad/zyrln/releases/download/v1.6.0/zyrln-1.6.apk) |
 
 </div>
 
@@ -252,7 +257,7 @@ function returnJson(data, statusCode) {
 
 ### 📌 مرحله 3 - تنظیم در Zyrln
 
-1. اپ **Zyrln** را اجرا کنید
+1. اپ **Zyrln** را اجرا کنید (قبلاً از لینک‌های بالا دانلود کرده‌اید)
 2. روی دکمه **+** برای ساخت پروفایل جدید کلیک کنید
 3. **Relay URL**: آدرس Google Apps Script را وارد کنید
 4. **Auth Key**: همان رمزی که در کد Apps Script نوشتید را وارد کنید
