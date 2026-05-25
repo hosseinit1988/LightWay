@@ -13,9 +13,10 @@
 <div dir="rtl" align="right">
 
 ## 📖 معرفی پروژه
+<div dir="rtl" align="right">
 
 **LightWay** یک پروکسی رله ساده، سبک و کاملا **رایگان** برای دور زدن فیلترینگ اینترنت در ایران است. این پروژه ترافیک شما را از طریق زیرساخت رایگان **Google Apps Script** و **Cloudflare Worker** هدایت می‌کند بدون اینکه نیاز به خرید سرور یا VPS داشته باشید.
-
+</div>
 </div>
 
 <div dir="rtl" align="right">
