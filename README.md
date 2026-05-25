@@ -238,21 +238,13 @@ function returnJson(data, statusCode) {
 
 <div dir="rtl" align="right">
 5. دو مقدار بالای کد را ویرایش کنید:
-</div>
-<div dir="ltr" align="left">
   - **AUTH_KEY**: یک رمز قوی انتخاب کنید (مثلا: `XyZ123!@#abcDEF`)
    - **WORKER_URL**: آدرس Worker مرحله قبل را وارد کنید
-</div>
-<div dir="rtl" align="right">
 6. روی **Save** (آیکون فلاپی دیسک) کلیک کنید
 7. روی **Deploy** → **New deployment** کلیک کنید
-</div>
-<div dir="ltr" align="left">
   - **Type**: Web app
    - **Execute as**: Me
    - **Who has access**: Anyone
-</div>
-<div dir="rtl" align="right">
 
 8. روی **Deploy** کلیک کنید و مجوزها را تأیید کنید
 9. آدرس Web app را کپی کنید (شبیه `https://script.google.com/macros/s/.../exec`)
