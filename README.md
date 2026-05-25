@@ -80,7 +80,7 @@
 ### 📌 مرحله 1 - ساخت Cloudflare Worker
 
 وارد حساب کلادفلر خود شوید و مراحل زیر را انجام دهید:
-
+<p dir="rtl">
 1. وارد [dash.cloudflare.com](https://dash.cloudflare.com/) شوید
 2. به بخش **Workers & Pages** بروید
 3. روی **Create application** کلیک کنید
@@ -90,7 +90,7 @@
 7. حالا روی دکمه **Edit code** کلیک کنید
 8. تمام کدهای داخل ادیتور را پاک کنید
 9. کد زیر را کامل کپی کرده و در ادیتور جایگذاری کنید:
-
+</p>
 </div>
 
 ```javascript
