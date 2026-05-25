@@ -238,7 +238,7 @@ function returnJson(data, statusCode) {
 
 <div dir="rtl" align="right">
 5. دو مقدار بالای کد را ویرایش کنید:
-   - <strong>**AUTH_KEY**:</strong>strong> یک رمز قوی انتخاب کنید (مثلا: `XyZ123!@#abcDEF`)
+   - <strong>**AUTH_KEY**:</strong> یک رمز قوی انتخاب کنید (مثلا: `XyZ123!@#abcDEF`)
    - **WORKER_URL**: آدرس Worker مرحله قبل را وارد کنید
 6. روی **Save** (آیکون فلاپی دیسک) کلیک کنید
 7. روی **Deploy** → **New deployment** کلیک کنید
