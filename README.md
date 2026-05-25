@@ -237,17 +237,22 @@ function returnJson(data, statusCode) {
 ```
 
 <div dir="rtl" align="right">
+
 5. دو مقدار بالای کد را ویرایش کنید:
-  کد AUTH_KEY را پیدا کنید و یک رمز قوی قرار دهید.
-کد WORKER_URL را پیدا کنید و آدرس ورکر ساخته شده در کلادفلر را قرار دهید.
+   - کد **AUTH_KEY** را پیدا کنید و یک رمز قوی قرار دهید.
+   - کد **WORKER_URL** را پیدا کنید و آدرس ورکر ساخته شده در کلادفلر را قرار دهید.
+
 6. روی **Save** (آیکون فلاپی دیسک) کلیک کنید
+
 7. روی **Deploy** → **New deployment** کلیک کنید
-  - **Type**: Web app
+   - **Type**: Web app
    - **Execute as**: Me
    - **Who has access**: Anyone
 
 8. روی **Deploy** کلیک کنید و مجوزها را تأیید کنید
+
 9. آدرس Web app را کپی کنید (شبیه `https://script.google.com/macros/s/.../exec`)
+
 </div>
 
 ---
